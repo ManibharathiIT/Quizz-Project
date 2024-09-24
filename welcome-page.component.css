@@ -1,0 +1,33 @@
+/* name */
+h2{
+    text-align: center;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* password */
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+    
+  }
+  .example-container{
+    border: 1px solid black;
+    padding: 10px;
+  }
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+/* overall */
+  .container{
+    margin: auto;
+  }

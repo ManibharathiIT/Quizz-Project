@@ -1,0 +1,28 @@
+<div class="container">
+<h2>Welcome to Quizz</h2>
+
+<div class="example-container">
+<!-- name -->
+<mat-form-field>
+    <mat-label>UserName</mat-label>
+    <input matInput value="name" [(ngModel)]="userName"/>
+</mat-form-field>   <br>
+<!-- password -->
+<mat-form-field>
+<mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide() ? 'password' : 'text'" />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="clickEvent($event)"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide()"
+    >
+<mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+</button>
+</mat-form-field><br>
+    <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+</div>
+</div>
+
+<router-outlet></router-outlet>

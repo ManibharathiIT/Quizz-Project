@@ -1,0 +1,39 @@
+<!-- <div *ngFor="let element of test">
+{{element.question}}
+
+<li>{{element.options}}</li>
+</div> -->
+
+<div *ngIf="test.length > 0 && temp!='full'" class="container">
+    <div class="sub-container">
+        <h1>Angular Test</h1>
+
+        <h2>Name: {{userName}}</h2>
+    <!-- Display Current Question -->
+    <h2>{{ currentQuestion.question }}</h2>
+    
+    <!-- Display Options -->
+        
+    <ul>
+        <mat-radio-group aria-label="Select an option" class="radio-btn" [(ngModel)]="nfselect">
+            <mat-radio-button [value]="option" *ngFor="let option of currentQuestion.options">{{ option }}</mat-radio-button>
+        </mat-radio-group>
+    </ul>
+  
+    <!-- Navigation Buttons -->
+    <button  mat-flat-button color="primary" (click)="prevQuestion()" [disabled]="currentIndex === 0">Previous</button>
+    <button  mat-flat-button color="primary" (click)="nextQuestion()" [disabled]="currentIndex === test.length - 1">Next</button>
+    <button  mat-flat-button color="accent" (click)="onSubmit()" *ngIf="currentIndex === test.length - 1">Submit</button>
+</div>
+</div>
+<div class="result">
+<div *ngIf="nfanswer>2 && temp=='full'" class="pass">
+    Congratulation You Pass the Test <i class="fa-regular fa-face-smile"></i>
+</div>
+<div *ngIf="nfanswer<3 && temp=='full'" class="fail">
+    Sorry You Fail the Test <i class="fa-regular fa-face-frown"></i>
+</div>
+<div *ngIf="currentIndex === test.length-1 && temp=='full'" class="score">Total Score: {{nfanswer}} / {{test.length}}</div>
+</div>
+
+<router-outlet></router-outlet>

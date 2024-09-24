@@ -1,0 +1,39 @@
+/* Simple styles for the quiz */
+h2 {
+    font-size: 1.5em;
+  }
+  
+  ul {
+    
+    padding: 0;
+  }
+  
+  button {
+    margin: 10px;
+  }
+  /* radio button */
+  
+
+  .radio-btn{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /* result */
+  .result{
+    text-align: center;
+    margin-top: 20px;
+    font-size: larger;
+  }
+.result .pass{
+    color: green;
+    font-size: x-large;
+}
+.result .fail{
+    color: red;
+    font-size: x-large;
+}
+.result .score{
+    margin-top: 10px;
+}
